@@ -21,6 +21,7 @@ def get_conferences():
             import_href=conference["href"],
             defaults={"name": conference["name"]},
         )
+    print("successfully got conferences")
 
 
 def poll():
