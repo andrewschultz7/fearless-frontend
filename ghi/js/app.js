@@ -26,15 +26,15 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
 
-    function errorCard(e) {
+    function errorCard(errorMessage) {
         return `
         <div class="alert alert-primary" role="alert">
-            ${e}
+            ${errorMessage}
         </div>
         `;
     }
 
-    const url = 'http://localhost:8000/api/conferencesd/';
+    const url = 'http://localhost:8000/api/conferences/';
 
     try {
         const response = await fetch(url);
@@ -65,8 +65,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         }
     } catch (e) {
+
         const column = document.querySelector('.row');
-        column.innerHTML = errorCard(console.error(e));
+        column.innerHTML = errorCard(e);
 
     }
 
