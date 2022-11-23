@@ -58,6 +58,11 @@
                                     class="form-control">
                                 <label for="end-date">end-date</label>
                             </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea placeholder="Enter description..." required class="form-control"
+                                    name="description" id="description" rows="3"></textarea>
+                            </div>
                             <div class="form-floating mb-3">
                                 <input placeholder="max-present" required type="number" name="max-present"
                                     id="max-present" class="form-control">
@@ -67,6 +72,11 @@
                                 <input placeholder="max-attendees" required type="number" name="max-attendees"
                                     id="max-attendees" class="form-control">
                                 <label for="max-attendees">max-attendees</label>
+                            </div>
+                            <div class="mb-3">
+                                <select required name="location" id="location" class="form-select">
+                                    <option selected value="">Choose a location</option>
+                                </select>
                             </div>
                             <button class="btn btn-primary">Create</button>
                         </form>
