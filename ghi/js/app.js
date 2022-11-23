@@ -26,14 +26,23 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
 
+    function errorCard(e) {
+        return `
+        <div class="alert alert-primary" role="alert">
+            ${e}
+        </div>
+        `;
+    }
 
-    const url = 'http://localhost:8000/api/conferences/';
+    const url = 'http://localhost:8000/api/conferencesd/';
 
     try {
         const response = await fetch(url);
 
         if (!response.ok) {
-            // Figure out what to do when the response is bad
+            const column = document.querySelector('.row');
+            const errorStatement = `Error: ${response.status}`
+            column.innerHTML = errorCard(errorStatement);
         } else {
             const data = await response.json();
 
@@ -56,9 +65,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         }
     } catch (e) {
-        <div class="alert alert-primary" role="alert">
-            console.error(e)
-        </div>
+        const column = document.querySelector('.row');
+        column.innerHTML = errorCard(console.error(e));
+
     }
 
 });
