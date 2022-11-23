@@ -56,7 +56,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         }
     } catch (e) {
-        console.error(e)
+        <div class="alert alert-primary" role="alert">
+            console.error(e)
+        </div>
     }
 
 });
