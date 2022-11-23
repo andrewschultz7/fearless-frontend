@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-    function createCard(title, description, pictureUrl) {
+    function createCard(title, description, pictureUrl, start, end) {
         return `
 
     <div class = "col-6 col-md-4">
@@ -11,6 +11,9 @@ window.addEventListener('DOMContentLoaded', async () => {
                     <div class="card-body">
                     <h5 class="card-title">${title}</h5>
                     <p class="card-text">${description}</p>
+                    <div class="card-footer">${start}-${end}
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +44,9 @@ window.addEventListener('DOMContentLoaded', async () => {
                     const name = details.conference.name;
                     const description = details.conference.description;
                     const pictureUrl = details.conference.location.picture_url;
-                    const html = createCard(name, description, pictureUrl);
+                    const start = new Date(details.conference.starts);
+                    const end = new Date(details.conference.ends);
+                    const html = createCard(name, description, pictureUrl, start.toLocaleDateString(), end.toLocaleDateString());
                     const column = document.querySelector('.row');
                     column.innerHTML += html;
                 }
