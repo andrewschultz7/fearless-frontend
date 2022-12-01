@@ -1,4 +1,8 @@
 import Nav from './Nav';
+import AttendeesList from './AttendeesList';
+import LocationForm from './LocationForm';
+import ConferenceForm from './ConferenceForm';
+import AttendConferenceForm from './AttendConferenceForm';
 
 function App(props) {
   if (props.attendees === undefined) {
@@ -8,30 +12,10 @@ function App(props) {
     <>
       <Nav />
       <div className="container">
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Conference</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* for (let attendee of props.attendees) {
-            <tr>
-              <td>{ attendee.name }</td>
-              <td>{ attendee.conference }</td>
-            </tr>
-          } */}
-            {props.attendees.map(attendee => {
-              return (
-                <tr key={attendee.href}>
-                  <td>{attendee.name}</td>
-                  <td>{attendee.conference}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        {/* <LocationForm /> */}
+        {/* <ConferenceForm /> */}
+        <AttendConferenceForm />
+        {/* <AttendeesList attendees={props.attendees} /> */}
       </div>
     </>
   );
